@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="SplineAreaSample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SplineAreaSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="7.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.DataContext>
+            <local:GoogleSearchViewModel></local:GoogleSearchViewModel>
+        </Grid.DataContext>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="chart:DateTimeAxis">
+                    <Setter Property="ShowMajorGridLines" Value="False"></Setter>
+                    <Setter Property="ShowMinorGridLines" Value="False"></Setter>
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                </Style>
+                <Style TargetType="chart:NumericalAxis">
+                    <Setter Property="ShowMajorGridLines" Value="False"></Setter>
+                    <Setter Property="ShowMinorGridLines" Value="False"></Setter>
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                </Style>
+                <Style TargetType="chart:SfCartesianChart">
+                    <Setter Property="Height" Value="30"></Setter>
+                    <Setter Property="Width" Value="850"></Setter>
+                    <Setter Property="Margin" Value="0,-40,0,0"></Setter>
+                </Style>
+                <Style TargetType="chart:SplineAreaSeries">
+                    <Setter Property="Fill" Value="#87CEEB"></Setter>
+                    <Setter Property="XBindingPath" Value="Year"></Setter>
+                    <Setter Property="YBindingPath" Value="Value"></Setter>
+                </Style>
+                <Style TargetType="ImageIcon">
+                    <Setter Property="Width" Value="30"></Setter>
+                    <Setter Property="Margin" Value="20,-35,0,0"></Setter>
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="20,10,0,0"></Setter>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <TextBlock Text="Economic and Investing Trends: A Year in Review(2022)" Grid.Column="2" Grid.Row="0" FontSize="20" HorizontalTextAlignment="Center"></TextBlock>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\Talent.png" Grid.Column="0" Grid.Row="1" Margin="20,20,0,0"></ImageIcon>
+        <TextBlock Text="Talent Exodus" Grid.Column="1" Grid.Row="1" Margin="20,30,0,0"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="1" Margin="0,-5,0,0">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding GreatResignation}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\Oil.png" Grid.Column="0" Grid.Row="2" Margin="20,0,0,0"></ImageIcon>
+        <TextBlock Text="Oil Price" Grid.Column="1" Grid.Row="2" Margin="20,15,0,0"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="2" Margin="0,-20,0,0">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding OilPrice}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\Housing.png" Grid.Column="0" Grid.Row="3" Margin="20,-25,0,0"></ImageIcon>
+        <TextBlock Text="Housing Bubble" Grid.Column="1" Grid.Row="3"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="3" Margin="0,-20,0,0">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding HousingBubble}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\Investing.png" Grid.Column="0" Grid.Row="4"></ImageIcon>
+        <TextBlock Text="Value Investing" Grid.Column="1" Grid.Row="4"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="4" Margin="0,-30,0,0">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding ValueInvesting}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\Bitcoin.png" Grid.Column="0" Grid.Row="5"></ImageIcon>
+        <TextBlock Text="BitCoin" Grid.Column="1" Grid.Row="5"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="5" Margin="0,-20,0,0">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding BitCoin}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\FInancial.png" Grid.Column="0" Grid.Row="6"></ImageIcon>
+        <TextBlock Text="Financial Slump" Grid.Column="1" Grid.Row="6"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="6">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding Recession}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\RisingPrice.png" Grid.Column="0" Grid.Row="7"></ImageIcon>
+        <TextBlock Text="RisingPrices" Grid.Column="1" Grid.Row="7"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="7">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding Inflation}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\Dollar.png" Grid.Column="0" Grid.Row="8"></ImageIcon>
+        <TextBlock Text="US Dollar" Grid.Column="1" Grid.Row="8"></TextBlock>
+        <chart:SfCartesianChart  Grid.Column="3" Grid.Row="8">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding USDollar}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\WorkForce.png" Grid.Column="0" Grid.Row="9"></ImageIcon>
+        <TextBlock Text="Workforce Reductions" Grid.Column="1" Grid.Row="9"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="9">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis/>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding Layoffs}"/>
+        </chart:SfCartesianChart>
+        <ImageIcon Source="D:\SampleTesting\SplineAreaSample\SplineAreaSample\SplineAreaSample\Image\Borrowing.png" Grid.Column="0" Grid.Row="10" ></ImageIcon>
+        <TextBlock Text="Borrowing Cost Expectation" Grid.Column="1" Grid.Row="10"></TextBlock>
+        <chart:SfCartesianChart Grid.Column="3" Grid.Row="10" Margin="0,-10,0,0" Height="60">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis Interval="2" Visibility="Visible">
+                    <chart:DateTimeAxis.LabelStyle>
+                        <chart:LabelStyle LabelFormat="MMM"></chart:LabelStyle>
+                    </chart:DateTimeAxis.LabelStyle>
+                </chart:DateTimeAxis>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis/>
+            </chart:SfCartesianChart.YAxes>
+            <chart:SplineAreaSeries ItemsSource="{Binding InterestRate}"/>
+        </chart:SfCartesianChart>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="11">
+            <TextBlock Text="Source Code :" Margin="-20,30,0,0" />
+            <TextBlock Text="Google Trends" Margin="0,30,0,0" FontStyle="Italic" TextDecorations="Underline" Foreground="#3E8EED" PointerPressed="TextBlock_PointerPressed"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
