@@ -35,6 +35,6 @@ namespace SplineAreaSample
 
             // Launch the URL in the default web browser
             Launcher.LaunchUriAsync(new Uri(url));
-        }
+        }    
     }
 }
