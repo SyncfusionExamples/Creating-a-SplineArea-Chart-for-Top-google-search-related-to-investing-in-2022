@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SplineAreaSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SplineAreaSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
