@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>SplineAreaSample</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+    <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Image\Bitcoin.png" />
+    <None Remove="Image\Borrowing.png" />
+    <None Remove="Image\Dollar.png" />
+    <None Remove="Image\FInancial.png" />
+    <None Remove="Image\Housing.png" />
+    <None Remove="Image\Investing.png" />
+    <None Remove="Image\Oil.png" />
+    <None Remove="Image\RisingPrice.png" />
+    <None Remove="Image\Talent.png" />
+    <None Remove="Image\WorkForce.png" />
+    <None Remove="Resource\BitCoin.csv" />
+    <None Remove="Resource\HousingBubble.csv" />
+    <None Remove="Resource\Inflation.csv" />
+    <None Remove="Resource\InterestRate.csv" />
+    <None Remove="Resource\Layoffs.csv" />
+    <None Remove="Resource\multiTimeline.csv" />
+    <None Remove="Resource\OilPrice.csv" />
+    <None Remove="Resource\Recession.csv" />
+    <None Remove="Resource\USDollar.csv" />
+    <None Remove="Resource\ValueInvsesting.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Image\Bitcoin.png" />
+    <Content Include="Image\Borrowing.png" />
+    <Content Include="Image\Dollar.png" />
+    <Content Include="Image\FInancial.png" />
+    <Content Include="Image\Housing.png" />
+    <Content Include="Image\Investing.png" />
+    <Content Include="Image\Oil.png" />
+    <Content Include="Image\RisingPrice.png" />
+    <Content Include="Image\Talent.png" />
+    <Content Include="Image\WorkForce.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\BitCoin.csv" />
+    <EmbeddedResource Include="Resource\HousingBubble.csv" />
+    <EmbeddedResource Include="Resource\Inflation.csv" />
+    <EmbeddedResource Include="Resource\InterestRate.csv" />
+    <EmbeddedResource Include="Resource\Layoffs.csv" />
+    <EmbeddedResource Include="Resource\multiTimeline.csv" />
+    <EmbeddedResource Include="Resource\OilPrice.csv" />
+    <EmbeddedResource Include="Resource\Recession.csv" />
+    <EmbeddedResource Include="Resource\USDollar.csv" />
+    <EmbeddedResource Include="Resource\ValueInvsesting.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.230217.4" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+    <PackageReference Include="Syncfusion.Chart.WinUI" Version="21.2.10" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <!-- 
+    Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+    Tools extension to be activated for this project even if the Windows App SDK Nuget
+    package has not yet been restored.
+  -->
+  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+
+  <!-- 
+    Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
+    Explorer "Package and Publish" context menu entry to be enabled for this project even if 
+    the Windows App SDK Nuget package has not yet been restored.
+  -->
+  <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+  </PropertyGroup>
+</Project>
