@@ -1,10 +1,6 @@
 # Creating-a-SplineArea-Chart-for-Top-google-search-related-to-investing-in-2022
 This article explains how to create a SplineArea Chart to visualize the top Google searches related to investing in 2022.
 
-## TroubleShooting
-### Path too long exception
-If you are facing an path too long exception when building this example project, close visual studio and rename the repository to short and build the project.
-
 ## Description
 
 In this blog, we’ll visualize the top Google search trends for investing using the Syncfusion WinUI Spline Area Chart. In an investment landscape in constant flux, staying attuned to these trends is important.
@@ -17,4 +13,6 @@ The SplineArea chart elucidates search trends, shedding light on the investment 
 
 For step by step process, refer to [Top-Google-Investing-Search](https://www.syncfusion.com/blogs/post/winui-spline-area-chart-top-google-investing-search-2022.aspx) blog.
 
-
+## TroubleShooting
+### Path too long exception
+If you are facing an path too long exception when building this example project, close visual studio and rename the repository to short and build the project.
