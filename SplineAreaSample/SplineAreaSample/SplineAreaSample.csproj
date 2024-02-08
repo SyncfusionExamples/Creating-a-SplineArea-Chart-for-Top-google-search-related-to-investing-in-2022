@@ -70,7 +70,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.230217.4" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
-    <PackageReference Include="Syncfusion.Chart.WinUI" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Chart.WinUI" Version="*" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
